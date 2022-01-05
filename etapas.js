@@ -8,7 +8,7 @@ candidatos: [
         nome:'Fulano de tal',
         partido: 'ABC',
         fotos: [
-            {url:'pref.jpg', legenda: 'Vereador',small: false}
+            {url:'../img/pref.jpg', legenda: 'Vereador',small: false}
         ]
     },
 { 
@@ -16,7 +16,7 @@ candidatos: [
     nome:'Beltrano da Silva',
     partido: 'DEF',
     fotos: [
-        {url:'w.png', legenda: 'Vereador', small: false}
+        {url:'../img/pref.jpg', legenda: 'Vereador', small: false}
     ]
 },
 ]
@@ -31,8 +31,8 @@ candidatos: [
     partido: 'ABC',
     vice:'Cic',
     fotos: [
-        {url:'pref.jpg', legenda: 'Prefeito'},
-        {url:'pref.jpg', legenda: 'Vice-Prefeito', small: true}
+        {url:'../img/pref.jpg', legenda: 'Prefeito'},
+        {url:'../img/pref.jpg', legenda: 'Vice-Prefeito', small: true}
     ]
 },
 {   

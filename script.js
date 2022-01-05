@@ -54,10 +54,10 @@ function atualizaInterface(){
            candidato = candidato[0];
            seuVotoPara.style.display = 'block';
            aviso.style.display = 'block';
-           descricao.innerHTML = 'Nome: ${candidato.nome}<br/> Partido: ${candidato.partido}';
+           descricao.innerHTML = `Nome: ${candidato.nome}<br/> Partido: ${candidato.partido}`;
            let fotosHtml = '';
         for(let i in candidato.fotos) {
-        fotosHtml += '<div class="d-1-image"><img src="img/${candidato.fotos[i].url}" alt=""/>${candidato.fotos[i].legenda}</div>';
+        fotosHtml += `<div class="d-1-image"><img src="img/${candidato.fotos[i].url}" alt=""/> <br />${candidato.fotos[i].legenda}</div>`;
 
     }
 
@@ -74,7 +74,7 @@ function atualizaInterface(){
         let elNumero = document.querySelector('.numero.pisca');
         if(elNumero !== null) {
             elNumero.innerHTML = n;
-            numero = '${numero}${n}';
+            numero = `${numero}${n}`;
         
             elNumero.classList.remove('pisca');
             if(elNumero.nextElementSibling !== null) {
