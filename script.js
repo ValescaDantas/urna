@@ -9,6 +9,7 @@ let numeros = document.querySelector('.d-1-3');
 let etapaAtual = 0;
 let numero= '';
 let votoBranco = false;
+let votos = [];
 
 
 function comecarEtapa(){
@@ -27,7 +28,6 @@ function comecarEtapa(){
 }
 
 
-
     seuVotoPara.style.display = 'none';
     cargo.innerHTML = etapa.titulo;
     descricao.innerHTML = '';
@@ -37,18 +37,16 @@ function comecarEtapa(){
 
 }
 
-function atualizaInterface(){
+function atualizaInterface() {
    let etapa = etapas[etapaAtual];
    let candidato = etapa.candidatos.filter((item)=>{
        if(item.numero === numero) {
            return true;
-       } else {
+       } else{
            return false;
        }
+    
   });
-
-       console.log("Candidato", candidato)
-     
 
        if(candidato.length > 0) {
            candidato = candidato[0];
@@ -102,17 +100,23 @@ function corrige(){
     comecarEtapa();
 }
 function confirma(){
-    let etapa = etapas[etapaAtual] ; 
+    let etapa = etapas[etapaAtual] === true; 
     
-    let votoConfirmado = false;
+    let votoConfirmado = false ;
 
-      if(votoBranco === true){
+      if(votoBranco === true) {
           votoConfirmado = true;
-      
-  } else if( numero.lenght === etapa.numeros){
+          votos.push({
+              etapa: etapas[etapaAtual].titulo,
+              voto:'branco'
+          });
+  } else if(numero.lenght === etapa.numeros) {
       votoConfirmado = true;
+      votos.push({
+        etapa: etapas[etapaAtual].titulo,
+        voto:numero
+     });
   }
-}
 
   if(votoConfirmado) {
       etapaAtual++;
@@ -120,7 +124,8 @@ function confirma(){
           comecarEtapa();
       } else{
           document.querySelector('.tela').innerHTML = '<div class="aviso--gigante pisca"> FIM</div>';
-
+console.log(votos);
       }
   }
+}
 comecarEtapa();
